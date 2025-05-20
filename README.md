@@ -1,6 +1,6 @@
 # NodeMCU ESP8266 RFID RC522 System
 
-Hệ thống quản lý RFID sử dụng NodeMCU ESP8266 và module RC522, tích hợp với MySQL database.
+Hệ thống quản lý RFID cơ bản sử dụng NodeMCU ESP8266 và module RC522, viết crud với php tích hợp với MySQL database.
 
 ## Mô tả
 
