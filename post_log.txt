@@ -1,0 +1,96 @@
+2025-05-20 17:56:25 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-20 17:56:30 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home1
+)
+
+2025-05-20 18:00:26 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home1
+)
+
+2025-05-20 18:00:28 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-20 18:00:29 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-20 18:00:32 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-20 18:00:37 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-20 18:00:38 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-20 18:01:21 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-20 18:01:23 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home1
+)
+
+2025-05-20 18:01:24 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home1
+)
+
+2025-05-20 18:01:28 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-20 18:01:29 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-20 18:02:30 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home1
+)
+
+2025-05-20 18:06:00 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-20 18:06:02 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home1
+)
+
