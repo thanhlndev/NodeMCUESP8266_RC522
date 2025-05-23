@@ -1,96 +1,271 @@
-2025-05-20 17:56:25 - Array
+2025-05-23 15:38:38 - Array
 (
     [UIDresult] => CFE1AFC4
     [location] => Home2
 )
 
-2025-05-20 17:56:30 - Array
+2025-05-23 15:38:50 - Current UID: CFE1AFC4
+2025-05-23 15:40:07 - Array
+(
+    [UIDresult] => 5C834901
+    [location] => Home2
+)
+
+2025-05-23 15:40:09 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-23 15:40:13 - Array
 (
     [UIDresult] => CFE1AFC4
     [location] => Home1
 )
 
-2025-05-20 18:00:26 - Array
+2025-05-23 15:40:16 - Array
+(
+    [UIDresult] => 5C834901
+    [location] => Home2
+)
+
+2025-05-23 15:40:18 - Array
 (
     [UIDresult] => CFE1AFC4
     [location] => Home1
 )
 
-2025-05-20 18:00:28 - Array
+2025-05-23 15:40:19 - Array
 (
-    [UIDresult] => CFE1AFC4
-    [location] => Home2
+    [UIDresult] => 5C834901
+    [location] => Home1
 )
 
-2025-05-20 18:00:29 - Array
-(
-    [UIDresult] => CFE1AFC4
-    [location] => Home2
-)
-
-2025-05-20 18:00:32 - Array
-(
-    [UIDresult] => CFE1AFC4
-    [location] => Home2
-)
-
-2025-05-20 18:00:37 - Array
-(
-    [UIDresult] => CFE1AFC4
-    [location] => Home2
-)
-
-2025-05-20 18:00:38 - Array
-(
-    [UIDresult] => CFE1AFC4
-    [location] => Home2
-)
-
-2025-05-20 18:01:21 - Array
-(
-    [UIDresult] => CFE1AFC4
-    [location] => Home2
-)
-
-2025-05-20 18:01:23 - Array
+2025-05-23 15:40:21 - Array
 (
     [UIDresult] => CFE1AFC4
     [location] => Home1
 )
 
-2025-05-20 18:01:24 - Array
+2025-05-23 15:42:44 - Initial UID: CFE1AFC4
+2025-05-23 15:42:50 - Array
 (
     [UIDresult] => CFE1AFC4
     [location] => Home1
 )
 
-2025-05-20 18:01:28 - Array
-(
-    [UIDresult] => CFE1AFC4
-    [location] => Home2
-)
-
-2025-05-20 18:01:29 - Array
-(
-    [UIDresult] => CFE1AFC4
-    [location] => Home2
-)
-
-2025-05-20 18:02:30 - Array
+2025-05-23 15:42:54 - Array
 (
     [UIDresult] => CFE1AFC4
     [location] => Home1
 )
 
-2025-05-20 18:06:00 - Array
+2025-05-23 15:42:55 - Array
 (
     [UIDresult] => CFE1AFC4
     [location] => Home2
 )
 
-2025-05-20 18:06:02 - Array
+2025-05-23 15:42:58 - Initial UID: CFE1AFC4
+2025-05-23 15:43:01 - Array
 (
     [UIDresult] => CFE1AFC4
     [location] => Home1
 )
 
+2025-05-23 15:43:14 - Current UID: CFE1AFC4
+2025-05-23 15:43:18 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home1
+)
+
+2025-05-23 15:43:20 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-23 15:43:24 - Array
+(
+    [UIDresult] => 5C834901
+    [location] => Home1
+)
+
+2025-05-23 15:43:25 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home1
+)
+
+2025-05-23 15:43:27 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-23 15:43:31 - Array
+(
+    [UIDresult] => 5C834901
+    [location] => Home2
+)
+
+2025-05-23 15:43:41 - Current UID: 5C834901
+2025-05-23 15:44:05 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home1
+)
+
+2025-05-23 15:44:32 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-23 15:51:47 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-23 15:51:49 - Array
+(
+    [UIDresult] => 5C834901
+    [location] => Home2
+)
+
+2025-05-23 15:51:51 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-23 15:52:02 - Array
+(
+    [UIDresult] => 5C834901
+    [location] => Home2
+)
+
+2025-05-23 15:52:05 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-23 15:52:14 - Current UID: CFE1AFC4
+2025-05-23 15:52:26 - Current UID: CFE1AFC4
+2025-05-23 15:52:28 - Current UID: CFE1AFC4
+2025-05-23 15:52:50 - Array
+(
+    [UIDresult] => 5C834901
+    [location] => Home1
+)
+
+2025-05-23 15:52:52 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home1
+)
+
+2025-05-23 15:53:02 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home1
+)
+
+2025-05-23 15:53:09 - Array
+(
+    [UIDresult] => 5C834901
+    [location] => Home1
+)
+
+2025-05-23 15:53:10 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home1
+)
+
+2025-05-23 15:53:12 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-23 15:53:15 - Current UID: CFE1AFC4
+2025-05-23 15:53:17 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-23 15:53:22 - Array
+(
+    [UIDresult] => 5C834901
+    [location] => Home1
+)
+
+2025-05-23 15:53:24 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-23 15:53:26 - Array
+(
+    [UIDresult] => 5C834901
+    [location] => Home2
+)
+
+2025-05-23 15:53:28 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home1
+)
+
+2025-05-23 15:53:48 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home1
+)
+
+2025-05-23 15:54:23 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-23 15:58:39 - Initial UID: CFE1AFC4
+2025-05-23 16:00:42 - Initial UID: CFE1AFC4
+2025-05-23 16:02:45 - Initial UID: CFE1AFC4
+2025-05-23 16:02:52 - Array
+(
+    [UIDresult] => 5C834901
+    [location] => Home1
+)
+
+2025-05-23 16:02:55 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home1
+)
+
+2025-05-23 16:02:58 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-23 16:03:01 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home1
+)
+
+2025-05-23 16:03:03 - Array
+(
+    [UIDresult] => CFE1AFC4
+    [location] => Home2
+)
+
+2025-05-23 16:03:09 - Initial UID: CFE1AFC4

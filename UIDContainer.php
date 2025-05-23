@@ -1,1 +1,1 @@
-<?php $UIDresult = 'CFE1AFC4'; echo $UIDresult; ?>
+<?php $UIDresult = 'CFE1AFC4'; $location = 'Home2'; echo $UIDresult; ?>

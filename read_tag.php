@@ -1,5 +1,18 @@
 <?php
 require 'database.php';
+
+// Lấy UID từ UIDContainer.php
+$uid = '';
+if (file_exists('UIDContainer.php')) {
+    ob_start();
+    include 'UIDContainer.php';
+    $uid = ob_get_clean();
+    $uid = trim($uid); // Loại bỏ khoảng trắng thừa
+}
+
+// Debug log
+$logMessage = date('Y-m-d H:i:s') . " - Initial UID: " . $uid . "\n";
+file_put_contents('post_log.txt', $logMessage, FILE_APPEND);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +27,7 @@ require 'database.php';
             font-family: Arial, sans-serif;
             padding: 20px;
             background-color: #f8f9fa;
+            transition: all 0.3s ease;
         }
 
         .topnav {
@@ -44,6 +58,17 @@ require 'database.php';
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.3s ease;
+        }
+
+        #userDataContent {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        #userDataContent.fade {
+            opacity: 0.5;
+            /* Hiệu ứng mờ nhẹ khi dữ liệu đang cập nhật */
         }
 
         @media (max-width: 768px) {
@@ -73,52 +98,128 @@ require 'database.php';
     <div class="content">
         <h3 class="text-center mb-4">Please Tag to Display ID or User Data</h3>
         <div id="getUID" style="display: none;"></div>
-        <div id="show_user_data" class="text-center"></div>
+        <div id="show_user_data" class="text-center">
+            <div id="userDataContent">
+                <?php if ($uid && $uid !== ''): ?>
+                    <h4>UID: <?php echo htmlspecialchars($uid); ?></h4>
+                    <p>Checking user data...</p>
+                <?php else: ?>
+                    <h4 class="text-muted">Waiting for RFID card...</h4>
+                <?php endif; ?>
+            </div>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdlZxGkvSEj7mgsX" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         $(document).ready(() => {
-            let currentUID = '';
+            let currentUID = '<?php echo addslashes($uid); ?>';
             let lastData = '';
+            let isProcessing = false;
+            let lastUpdateTime = 0;
+
+            function debounce(func, wait) {
+                let timeout;
+                return function executedFunction(...args) {
+                    const later = () => {
+                        clearTimeout(timeout);
+                        func(...args);
+                    };
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                };
+            }
 
             function updateDisplay() {
-                // Lấy UID từ UIDContainer.php
-                $("#getUID").load("UIDContainer.php", () => {
-                    const uid = $("#getUID").text().trim();
-                    console.log("UID loaded: " + uid);
+                if (isProcessing || (Date.now() - lastUpdateTime < 500)) return;
+                isProcessing = true;
+                lastUpdateTime = Date.now();
+                $('#userDataContent').addClass('fade'); // Hiệu ứng mờ nhẹ khi cập nhật
+                console.log("Updating display at:", new Date().toISOString());
 
-                    if (uid === '') {
-                        $("#show_user_data").html("<h4 class='text-muted'>Waiting for RFID card...</h4>");
-                    } else if (uid !== currentUID) {
-                        currentUID = uid;
-                        console.log("New UID detected: " + currentUID);
-                        fetchUserData(currentUID);
-                    } else if (currentUID) {
-                        // Kiểm tra dữ liệu mới định kỳ
-                        fetchUserData(currentUID);
+                // Lấy UID từ UIDContainer.php
+                $.ajax({
+                    url: "UIDContainer.php?t=" + new Date().getTime(),
+                    method: "GET",
+                    cache: false,
+                    headers: {
+                        "Cache-Control": "no-cache, no-store, must-revalidate"
+                    },
+                    success: (response) => {
+                        const uid = response.trim();
+                        console.log("Fetched UID:", uid, "Previous UID:", currentUID);
+
+                        if (!uid || uid === '') {
+                            if (currentUID !== '') {
+                                $("#userDataContent").html("<h4 class='text-muted'>Waiting for RFID card...</h4>");
+                                currentUID = '';
+                                lastData = '';
+                            }
+                        } else {
+                            currentUID = uid;
+                            fetchUserData(currentUID);
+                        }
+                    },
+                    error: (xhr, status, error) => {
+                        console.error("Error loading UID:", error, "Status:", status);
+                        $("#userDataContent").html(
+                            "<div class='alert alert-danger'>" +
+                            "<h4>Error loading UID</h4>" +
+                            "<p>" + error + " (Status: " + status + ")</p>" +
+                            "</div>"
+                        );
+                    },
+                    complete: () => {
+                        $('#userDataContent').removeClass('fade');
+                        isProcessing = false;
                     }
                 });
             }
 
             function fetchUserData(uid) {
-                $.get("read_tag_user_data.php?id=" + encodeURIComponent(uid), (data) => {
-                    console.log("Received data: " + data);
-                    if (data !== lastData) {
-                        $("#show_user_data").html(data);
-                        lastData = data;
+                console.log("Fetching user data for UID:", uid);
+                $.ajax({
+                    url: "read_tag_user_data.php?t=" + new Date().getTime(),
+                    method: "GET",
+                    data: {
+                        id: uid
+                    },
+                    cache: false,
+                    headers: {
+                        "Cache-Control": "no-cache, no-store, must-revalidate"
+                    },
+                    success: (data) => {
+                        console.log("Fetched user data:", data);
+                        if (data !== lastData) {
+                            $("#userDataContent").html(
+                                "<h4>UID: " + currentUID + "</h4>" +
+                                data
+                            );
+                            lastData = data;
+                        }
+                    },
+                    error: (xhr, status, error) => {
+                        console.error("Error fetching user data:", error, "Status:", status);
+                        $("#userDataContent").html(
+                            "<div class='alert alert-danger'>" +
+                            "<h4>Error fetching user data</h4>" +
+                            "<p>" + error + " (Status: " + status + ")</p>" +
+                            "</div>"
+                        );
+                    },
+                    complete: () => {
+                        $('#userDataContent').removeClass('fade');
+                        isProcessing = false;
                     }
-                }).fail((xhr, status, error) => {
-                    console.error("Failed to fetch user data: " + error);
-                    $("#show_user_data").html("<h4 class='text-danger'>Error fetching user data: " + error + "</h4>");
                 });
             }
 
             // Gọi ngay khi tải trang
             updateDisplay();
-            // Cập nhật mỗi 500ms
-            setInterval(updateDisplay, 500);
+            // Cập nhật mỗi 500ms với debounce
+            const debouncedUpdate = debounce(updateDisplay, 100);
+            setInterval(debouncedUpdate, 500);
         });
     </script>
 </body>

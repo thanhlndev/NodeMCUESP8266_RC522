@@ -79,10 +79,52 @@ file_put_contents('UIDContainer.php', $write);
     </div>
     <div class="content">
         <h3 class="text-center mb-4">Welcome to NodeMCU RFID System</h3>
-        <img src="home_ok_ok.jpg" alt="Home Image" class="img-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="home_ok_ok.jpg" alt="Home Image" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">System Information</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <i class="fas fa-microchip"></i> Hardware: NodeMCU V3 ESP8266
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fas fa-id-card"></i> RFID Reader: RC522
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fas fa-database"></i> Database: MySQL
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fas fa-server"></i> Server: PHP
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Quick Links</h5>
+                        <div class="d-grid gap-2">
+                            <a href="user_data.php" class="btn btn-primary">
+                                <i class="fas fa-users"></i> View Users
+                            </a>
+                            <a href="registration.php" class="btn btn-success">
+                                <i class="fas fa-user-plus"></i> Register New User
+                            </a>
+                            <a href="read_tag.php" class="btn btn-info">
+                                <i class="fas fa-id-card"></i> Read Tag
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdlZxGkvSEj7mgsX" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
 </body>
 
 </html>

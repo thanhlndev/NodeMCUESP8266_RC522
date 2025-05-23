@@ -120,7 +120,7 @@ file_put_contents('UIDContainer.php', $write);
                         $("#id").val(getID);
                     }
                 });
-            }, 500);
+            }, 100);
         });
     </script>
 </body>
